@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // Especifica la versión de JavaScript de salida.
+    "module": "commonjs", // Usa CommonJS como sistema de módulos.
+    "strict": true, // Activa el modo estricto.
+    "esModuleInterop": true, // Permite la interoperabilidad con módulos ES.
+    "skipLibCheck": true, // Omite la comprobación de tipos en las bibliotecas.
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist", // Directorio donde se guardarán los archivos compilados.
+    "rootDir": "./src", // Directorio raíz donde se encuentran los archivos TypeScript.
+    "resolveJsonModule": true,
+  },
+  "include": [
+    "src/**/*.ts",
+  ]
+}

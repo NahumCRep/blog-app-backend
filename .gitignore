@@ -1,0 +1,28 @@
+# Dependency directories
+node_modules/
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# production
+/build
+/dist
+tsconfig.tsbuildinfo
+
+# Log files
+*.log
+
+# System files (macOS, Windows)
+.DS_Store
+Thumbs.db
+
+# IDE/editor specific files
+.vscode/
+
+# Lock files (si decides no incluirlos)
+# package-lock.json
+# yarn.lock
