@@ -7,4 +7,5 @@ const router = Router();
 
 router.post('/login', loginDataValidations, tryCatch(loginUser));
 
-module.exports = router;
+// module.exports = router;
+export default router

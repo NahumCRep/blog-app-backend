@@ -1,11 +1,12 @@
 require('dotenv').config();
-// const express = require("express");
 import express, { Express, Request, Response } from "express";
-const helmet = require('helmet');
-const cors = require("cors");
-const { rateLimit } = require("express-rate-limit");
-const authMiddleware = require('./modules/auth/authMiddleware');
-const errorHandler = require("./middlewares/errorHandler");
+import helmet from "helmet";
+import cors from "cors";
+import errorHandler from "./middlewares/errorHandler";
+import authMiddleware from "./modules/auth/authMiddleware";
+import { rateLimit } from "express-rate-limit";
+
+import authRoutes from "./modules/auth/authRoutes";
 
 const app: Express = express();
 
@@ -28,7 +29,8 @@ app.use(express.json());
 app.use(express.static('public'));
 
 
-app.use('/api/auth', require("./modules/auth/authRoutes"));
+// app.use('/api/auth', require("./modules/auth/authRoutes"));
+app.use('/api/auth', authRoutes);
 
 app.get('/hello', authMiddleware, (req: Request, res: Response) => {
     res.json({ message: "hello" })

@@ -1,5 +1,5 @@
 import { check } from 'express-validator';
-const validateFields = require("../../middlewares/fieldsValidation");
+import validateFields from "../../middlewares/fieldsValidation";
 
 // Middleware de validación
 const loginDataValidations = [

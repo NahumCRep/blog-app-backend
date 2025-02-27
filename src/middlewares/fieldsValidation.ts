@@ -13,4 +13,5 @@ const validateFields = (req: Request, res: Response, next: NextFunction) => {
     next();
 }
 
-module.exports = validateFields;
+export default validateFields;
+// module.exports = validateFields;
