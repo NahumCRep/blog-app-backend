@@ -5,6 +5,7 @@ const helmet = require('helmet');
 const cors = require("cors");
 const { rateLimit } = require("express-rate-limit");
 const authMiddleware = require('./modules/auth/authMiddleware');
+const errorHandler = require("./middlewares/errorHandler");
 
 const app: Express = express();
 
@@ -32,6 +33,8 @@ app.use('/api/auth', require("./modules/auth/authRoutes"));
 app.get('/hello', authMiddleware, (req: Request, res: Response) => {
     res.json({ message: "hello" })
 })
+
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 4000
 app.listen(PORT, () => console.log(`server up on port ${PORT}`));

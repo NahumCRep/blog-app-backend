@@ -1,13 +1,10 @@
 const { Router } = require('express');
-const jwtUtils = require("../../utils/tokenUtils");
+import { loginDataValidations } from "./authValidations";
+import { tryCatch } from "../../utils/tryCatch";
+import { loginUser } from "./authControllers";
 
 const router = Router();
 
-router.post('/login', (req: any, res: any) => {
-    const credentials = req.body;
-    const { email, password } = credentials;
-    const token = jwtUtils.generateToken({ email });
-    res.json({ token: token })
-});
+router.post('/login', loginDataValidations, tryCatch(loginUser));
 
 module.exports = router;
