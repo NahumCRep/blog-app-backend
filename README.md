@@ -20,7 +20,7 @@ Aplicacion para Blogs, con paginas publicas para visualizacion de los blogs, reg
 Para instalar las dependencias necesarias para la producción, ejecuta el siguiente comando:
 
 ```bash
-npm install bcryptjs cors dotenv express express-rate-limit helmet jsonwebtoken
+npm install bcryptjs cors dotenv express express-validator express-rate-limit helmet jsonwebtoken
 ```
 
 ### Dependencias de desarrollo
