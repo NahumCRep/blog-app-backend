@@ -10,9 +10,6 @@ Aplicacion para Blogs, con paginas publicas para visualizacion de los blogs, reg
 - Typescript
 - PostgresSQL | MySQL
 
-!!! note
-    En este proyecto se esta utilizando PostgresSQL. Para ver el proyecto con mysql o (sequilize + postgresSQL) puede cambiar a sus respectivas ramas.
-
 ## Instalación de dependencias
 
 ### Dependencias de producción
