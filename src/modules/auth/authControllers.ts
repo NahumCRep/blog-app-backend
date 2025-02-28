@@ -1,16 +1,21 @@
 import { Request, Response } from "express";
-import { generateToken } from "../../utils/tokenUtils";
 import { statusCodes } from "../../constants/statusCodes";
-import AppError from "../../utils/appError";
+import { registerUser, loginUser } from "./authService";
 
-const loginUser = async (req: Request, res: Response) => {
+const loginUserController = async (req: Request, res: Response) => {
     const credentials = req.body;
     const { email, password } = credentials;
-    const token = generateToken({ email });
-    // throw new AppError("test error app error", statusCodes.BAD_REQUEST);
-    res.json({ token })
+    const response = await loginUser(email, password);
+    res.status(statusCodes.OK).json(response);
+}
+
+const registerUserController = async (req: Request, res: Response) => {
+    const data = req.body;
+    const response = await registerUser(data)
+    res.status(statusCodes.CREATED).json({ message: "User registration success", user: response });
 }
 
 export {
-    loginUser
+    loginUserController,
+    registerUserController,
 }

@@ -1,11 +1,12 @@
 const { Router } = require('express');
-import { loginDataValidations } from "./authValidations";
 import { tryCatch } from "../../utils/tryCatch";
-import { loginUser } from "./authControllers";
+import { loginDataValidations, registerDataValidations } from "./authValidations";
+import { loginUserController, registerUserController } from "./authControllers";
 
 const router = Router();
 
-router.post('/login', loginDataValidations, tryCatch(loginUser));
+router.post('/login', loginDataValidations, tryCatch(loginUserController));
+router.post('/register', registerDataValidations, tryCatch(registerUserController))
 
 // module.exports = router;
 export default router

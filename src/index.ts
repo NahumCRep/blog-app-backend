@@ -5,8 +5,10 @@ import cors from "cors";
 import errorHandler from "./middlewares/errorHandler";
 import authMiddleware from "./modules/auth/authMiddleware";
 import { rateLimit } from "express-rate-limit";
-
+import runMigrations from "./database/migrations/migrations";
 import authRoutes from "./modules/auth/authRoutes";
+
+runMigrations();
 
 const app: Express = express();
 
