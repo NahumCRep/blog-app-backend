@@ -16,9 +16,9 @@ const registerUser = async (newUser: IRegisterData) => {
     const hashedPassword = await bcrypt.hash(password, saltRounds);
 
     const query = `
-      INSERT INTO users (uuid, firstName, lastName, correo, role, password)
+      INSERT INTO users (uuid, firstName, lastName, email, role, password)
       VALUES ($1, $2, $3, $4, $5, $6)
-      RETURNING id, uuid, firstName, lastName, correo, role, createdAt, updatedAt;
+      RETURNING id, uuid, firstName, lastName, email, role, createdAt, updatedAt;
     `;
     const values = [uuid, firstName, lastName, email, role, hashedPassword];
 

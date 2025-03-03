@@ -6,9 +6,10 @@ const createUsersTable = async () => {
     CREATE TABLE IF NOT EXISTS users (
       id SERIAL PRIMARY KEY, 
       uuid UUID UNIQUE NOT NULL,
+      google_id VARCHAR(255) UNIQUE,
       firstName VARCHAR(100) NOT NULL,
       lastName VARCHAR(100),
-      correo VARCHAR(100) UNIQUE NOT NULL,
+      email VARCHAR(100) UNIQUE NOT NULL,
       role VARCHAR(50),
       password VARCHAR(255) NOT NULL,
       createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
